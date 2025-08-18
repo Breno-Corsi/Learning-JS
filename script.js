@@ -20,13 +20,12 @@ function compressString() {
 
 function compressCharacters(arrayString) {
     for (let charIndex = 0; charIndex < arrayString.length; charIndex++) {
-        let letter = arrayString[charIndex];
         let timesLetterAppears = 1;
         while (arrayString[charIndex] == arrayString[charIndex + 1]) {
             timesLetterAppears++;
             arrayString.splice(charIndex, 1);
         }
-        stringOutput = stringOutput.concat(timesLetterAppears, letter);
+        stringOutput = stringOutput.concat(timesLetterAppears, arrayString[charIndex]);
     }
 }
 
