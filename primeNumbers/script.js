@@ -22,10 +22,16 @@ function calculateNumbers() {
     startNumber = getNumber("start-number");
     endNumber = getNumber("end-number");
     swapIfSecondValueIsGreater();
-    console.time("calculateNumbers");
+    // console.time("calculateNumbers");
     checkForException(startNumber);
-    showResult(isPrime(startNumber));
-    console.timeEnd("calculateNumbers");
+    for (startNumber; startNumber <= endNumber; startNumber++) {
+        if (isPrime(startNumber) == true) {
+            primeNumbers.push(startNumber);
+        }
+    }
+    console.log(primeNumbers);
+    // console.timeEnd("calculateNumbers");
+    showResult(primeNumbers);
 }
 
 function swapIfSecondValueIsGreater() {
@@ -36,19 +42,19 @@ function swapIfSecondValueIsGreater() {
 
 function checkForException(start) {
     if (start === 0 || start === 1) {
-    start = 2;
+        primeNumbers.push(2);
+        startNumber = 2;
     }
 }
 
-
 function isPrime(n) {
-    console.log("Checking ", n);
     if (n % 2 == 0) {
         console.log(n, "is even!");
         return false;
     }
-    maxPossible = Math.sqrt(n);
-    for (let i = 3; i == maxPossible; i+=2) {
+    let maxPossible = Math.sqrt(n);
+    for (let i = 3; i <= maxPossible; i += 2) {
+        console.log(n, "/", i);
         if (n % i == 0) {
             console.log(n, " is divisible by ", i);
             return false;
