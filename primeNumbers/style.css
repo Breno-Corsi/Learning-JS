@@ -1,0 +1,91 @@
+body {
+    background-color: #333;
+    color: #fff;
+
+    font-family: helvetica;
+    font-size: 150%;
+}
+
+h1 {
+    justify-self: center;
+
+    margin: 3%;
+}
+
+label {
+    position: relative;
+
+    background-color: #333;
+    color: #fff;
+
+    top: 5%;
+    left: 12.5%;
+
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.container {
+    display: relative;
+
+    width: 50%;
+    height: 700px;
+    justify-self: center;
+    align-items: center;
+
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+.number-input {
+    display: block;
+    width: 80%;
+    height: 10%;
+    font-size: 150%;
+    color: #fff;
+    
+    margin-left: 10%;
+    margin-top: 2.3%;
+
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+.number-input::-webkit-inner-spin-button,
+.number-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.button-calculate {
+    display: block;
+    width: 30%;
+    height: 10%;
+    font-size: 150%;
+
+    margin-left: 35%;
+    margin-top: 5%;
+    margin-bottom: 0%;
+
+    border: none;
+    border-radius: 10px;
+}
+.button-calculate:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.number-output {
+    width: 80%;
+    height: 33.5%;
+    font-size: 150%;
+    color: #fff;
+
+    margin-left: 10%;
+    margin-top: 2.3%;
+
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
