@@ -11,7 +11,7 @@ function getNumber(elementId) {
     if (numberValue < 0) {
         alert("No negative values allowed!");
         return false;
-    } else if (numberValue > 10000000) {
+    } else if (numberValue > 100000000) {
         alert("Max value allowed: 10.000.000");
         return false;
     }
@@ -21,23 +21,27 @@ function getNumber(elementId) {
 function calculateNumbers() {
     startNumber = getNumber("start-number");
     endNumber = getNumber("end-number");
-    swapIfSecondValueIsGreater();
-    // console.time("calculateNumbers");
+    if (!checkIfSecondValueIsGreater()) {
+        return false;
+    };
     checkForException(startNumber);
+    console.time("calculateNumbers");
     for (startNumber; startNumber <= endNumber; startNumber++) {
         if (isPrime(startNumber) == true) {
             primeNumbers.push(startNumber);
         }
     }
-    console.log(primeNumbers);
-    // console.timeEnd("calculateNumbers");
+    // console.log(primeNumbers);
     showResult(primeNumbers);
+    console.timeEnd("calculateNumbers");
 }
 
-function swapIfSecondValueIsGreater() {
+function checkIfSecondValueIsGreater() {
     if (startNumber > endNumber) {
-        [startNumber, endNumber] = [endNumber, startNumber];
+        alert("Start number must be less than end number!");
+        return false;
     }
+    return true;
 }
 
 function checkForException(start) {
@@ -49,17 +53,17 @@ function checkForException(start) {
 
 function isPrime(n) {
     if (n % 2 == 0) {
-        console.log(n, "is even!");
+        // console.log(n, "is even!");
         return false;
     }
     let maxPossible = Math.sqrt(n);
     for (let i = 3; i <= maxPossible; i += 2) {
-        console.log(n, "/", i);
+        // console.log(n, "/", i);
         if (n % i == 0) {
-            console.log(n, " is divisible by ", i);
+            // console.log(n, " is divisible by ", i);
             return false;
         }
     }
-    console.log(n, " is a prime number!");
+    // console.log(n, " is a prime number!");
     return true;
 }
