@@ -1,0 +1,60 @@
+body {
+    background-color: #1e1e1e;
+    font-family: helvetica;
+    font-size: 150%;
+    color: #fff;
+}
+
+h1 {
+    margin-left: 33.5vw;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.start-button {
+    width: 10vw;
+    height: 5vw;
+
+    background-color: transparent;
+    border: 5px solid #fff;
+    border-radius: 15px; 
+
+    font-size: 150%;
+    color: #fff;
+}
+.start-button:hover {
+    background-color: #fff;
+    color: #1e1e1e;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    align-self: center;
+    justify-self: center;
+
+    width: 40vw;
+    height: 40vw;
+    gap: 5px;
+
+    background-color: #fff;
+}
+/* https://stackoverflow.com/questions/13792755/show-border-grid-lines-only-between-elements/47914693#47914693 */
+.container > * {
+    background-color: #1e1e1e;
+}
+
+.space {
+    text-align: center;
+    border: none;
+
+    font-size: 800%;
+    color: #fff;
+}
+.space:hover {
+    background-color: #292929;
+}
