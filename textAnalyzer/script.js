@@ -1,6 +1,3 @@
-let wordsArray = [];
-let wordCountResultArray = [];
-
 function getTextInput() {
     return document.getElementById("text-input").value.toLowerCase();
 }
@@ -11,9 +8,11 @@ function proccess() {
     // writeToTextArea("word-count", text);
     // writeToTextArea("top-five-words", text);
     let arrayTextInput = turnTextIntoArray(userTextInput);
-    getWordsArray(arrayTextInput);
-    getWordCount(wordsArray);
+    const wordsArray = getWordsArray(arrayTextInput);
+    const wordCountResultArray = getWordCount(wordsArray);
+    const uniqueWordsArray = getUniqueWords(wordsArray);
     writeToTextArea("word-count", wordCountResultArray);
+    writeToTextArea("unique-words", uniqueWordsArray);
 }
 
 function writeToTextArea(elementId, text) {
@@ -27,6 +26,7 @@ function turnTextIntoArray(text) {
 }
 
 function getWordsArray(inputArray) {
+    let wordsArray = [];
     while (inputArray.length > 0) {
         let count = 0;
         let word = inputArray[0];
@@ -36,14 +36,28 @@ function getWordsArray(inputArray) {
         }
         wordsArray.push(count, word);
     }
+    return wordsArray;
 }
 
 function getWordCount(inputArray) {
-    wordCountResultArray = wordsArray;
-    console.log(wordCountResultArray);
-    for (let i = 1; i < wordCountResultArray.length; i += 4) {
-        wordCountResultArray.splice(i, 0, ': ');
-        wordCountResultArray.splice(i+2, 0, '\n');
+    let proccessResultArray = [];
+    proccessResultArray.push(...inputArray);
+    for (let i = 1; i < proccessResultArray.length; i += 4) {
+        proccessResultArray.splice(i, 0, ': ');
+        proccessResultArray.splice(i+2, 0, '\n');
     }
-    wordCountResultArray = inputArray.join('');
+    proccessResultArray = proccessResultArray.join('');
+    return proccessResultArray;
+}
+
+function getUniqueWords(inputArray) {
+    console.log(inputArray);
+    let proccessResultArray = [];
+    for (let i = 0; i < inputArray.length; i++) {
+        if (inputArray[i] == 1) {
+            console.log(inputArray[i+1]);
+            proccessResultArray.push(inputArray[i+1]);
+        }
+    }
+    return proccessResultArray;
 }
