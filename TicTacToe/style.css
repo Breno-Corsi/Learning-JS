@@ -37,8 +37,8 @@ h1 {
     align-self: center;
     justify-self: center;
 
-    width: 40vw;
-    height: 40vw;
+    width: 39vw;
+    height: 39vw;
     gap: 5px;
 
     background-color: #fff;
@@ -51,6 +51,8 @@ h1 {
 .space {
     text-align: center;
     border: none;
+    width: 13vw;
+    height: 13vw;
 
     font-size: 800%;
     color: #fff;
