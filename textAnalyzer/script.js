@@ -26,12 +26,12 @@ function turnTextIntoArray(text) {
 
 function getWordsArray(inputArray) {
     let wordsArray = [];
-    while (inputArray.length > 0) {
+    for (let l = inputArray.length; l > 0; l = inputArray.length) {
         let count = 0;
         let word = inputArray[0];
-        while (inputArray.indexOf(word) != -1) {
+        for (let i = inputArray.indexOf(word); i != -1; i = inputArray.indexOf(word)) {
             inputArray.splice(inputArray.indexOf(word), 1);
-            count++
+            count++;
         }
         wordsArray.push(count, word);
     }
