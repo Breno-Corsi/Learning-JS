@@ -5,7 +5,7 @@ let positionArray = [
     ['','',''],
     ['','',''],
     ['','','']
-]
+];
 
 function inputSymbol(position, i, j) {
     let pos = document.getElementById(position);
@@ -61,6 +61,7 @@ function checkVictory() {
 }
 
 function newGame() {
+    count = 0;
     for (let i = 0; i <= 2; i++) {
         for (let j = 0; j <= 2; j++) {
             positionArray[i][j] = '';
