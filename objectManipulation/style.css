@@ -1,0 +1,30 @@
+body {
+    background-color: #000;
+    font-family: helvetica;
+    font-size: 150%;
+    color: #fff;
+}
+
+h1 {
+    justify-self: center;
+}
+
+.container {
+    justify-self: center;
+}
+
+.simulated-terminal {
+    width: 80vw;
+    height: 80vh;
+    
+    justify-self: center;
+
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 150%;
+
+    border: 1px solid #fff;
+    border-radius: 5px;
+
+    padding-left: 1vw;
+}
