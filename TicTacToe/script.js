@@ -14,11 +14,15 @@ function inputSymbol(position, i, j) {
         positionArray[i][j] = symbols[0];
         [symbols[0], symbols[1]] = [symbols[1], symbols[0]];
     }
-    checkVictory();
+    if (checkVictory()) {
+        alert(symbols[1] + " won the game!");
+        newGame();
+    }
     count++;
     if (count == 9) {
         count == 0;
-        console.log("Draw!");
+        alert("Draw!");
+        newGame();
     }
 }
 
@@ -29,7 +33,7 @@ function checkVictory() {
             positionArray[i][0] == positionArray[i][1] &&
             positionArray[i][0] == positionArray[i][2]
         ) {
-            console.log(symbols[1], "won the game!");
+            return true;
         }
     }
 // https://stackoverflow.com/questions/14832603/check-if-all-values-of-array-are-equal
@@ -39,19 +43,33 @@ function checkVictory() {
             positionArray[0][j] == positionArray[1][j] &&
             positionArray[0][j] == positionArray[2][j]
         ) {
-            console.log(symbols[1], "won the game!");
+            return true;
         }
     }
     if (positionArray[0][0] != '' &&
         positionArray[0][0] == positionArray[1][1] &&
         positionArray[1][1] == positionArray[2][2]
     ) {
-        console.log(symbols[1], "won the game!")
+        return true;
     }
     if (positionArray[0][2] != '' &&
         positionArray[0][2] == positionArray[1][1] &&
         positionArray[1][1] == positionArray[2][0]
     ) {
-        console.log(symbols[1], "won the game!")
+        return true;
+    }
+}
+
+function newGame() {
+    for (let i = 0; i <= 2; i++) {
+        for (let j = 0; j <= 2; j++) {
+            positionArray[i][j] = '';
+        }
+    }
+    console.log(positionArray);
+    for (let n = 1; n <= 9; n++) {
+        let id = 'p'+n;
+        pos = document.getElementById(id);
+        pos.innerHTML = '';
     }
 }
